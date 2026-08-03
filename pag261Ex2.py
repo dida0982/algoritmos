@@ -36,3 +36,41 @@ print("\n=== ALUNOS CADASTRADOS ===\n")
 
 for aluno in alunos:
     print(aluno)
+    
+nome_procurado = input("Digite o nome que deseja pesquisar: ").strip()
+
+encontrou = False
+
+for aluno in alunos:
+
+    if aluno["nome"].lower() == nome_procurado.lower():
+
+        print("\aluno encontrado!\n")
+        print("Nome:", aluno["nome"])
+        print("1_bimestre:", aluno["1_bimestre"])
+        print("2_bimestre:", aluno["2_bimestre"])
+        print("3_bimestre:", aluno["3_bimestre"])
+        print("4_bimestre:", aluno["4_bimestre"])
+
+        encontrou = True
+        break
+
+if not encontrou:
+    print("\nRegistro não encontrado.")
+    
+alunos.sort(key=lambda registro: registro["nome"].lower())
+
+print("\nAgenda classificada com sucesso!")
+
+print("\n========== AGENDA ==========\n")
+
+for alunos in alunos:
+    print("Nome:", aluno["nome"])
+    print("1_bimestre:", aluno["1_bimestre"])
+    print("2_bimestre:", aluno["2_bimestre"])
+    print("3_bimestre:", aluno["3_bimestre"])
+    print("4_bimestre:", aluno["4_bimestre"])
+    print("-" * 30)
+    
+print("\nPrograma encerrado.")
+    
