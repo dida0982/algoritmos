@@ -1,9 +1,9 @@
 # 1. Listas de dados (Agora ambas possuem exatamente 20 elementos)
 nomes = [
-    'Ana Beatriz', 'Bruno César', 'Camila Rocha', 'Diego Nunes', 'Eduarda Ramos',
-    'Felipe Duarte', 'Gabriela Torres', 'Henrique Lopes', 'Isabela Barros', 'João Pereira',
-    'Juliana Costa', 'Leonardo Pinto', 'Lucas Almeida', 'Maria Souza', 'Natália Ribeiro',
-    'Pedro Santos', 'Rafael Martins', 'Sophia Mendes', 'Thiago Lima', 'Vinícius Oliveira'
+    'Ana', 'Bruno', 'Camila', 'Diego', 'Eduarda',
+    'Felipe', 'Gabriela', 'Henrique', 'Isabela', 'João',
+    'Juliana', 'Leonardo', 'Lucas', 'Maria', 'Natália',
+    'Pedro', 'Rafael', 'Sophia', 'Thiago', 'Vinícius'
 ]
 
 alturas = [
