@@ -9,20 +9,21 @@ Elaborar um programa que efetue o gerenciamento dos dados de 10 registgros de um
 
 '''
 
-#empty list.
 agenda = []
 
 for i in range(10):
-    print(f"Register {i + 1}")
-    
-    name = input("Name: ")
-    address = input("Address: ")
-    phone = input("Phone: ")
-    
-    register= {
-        "name": name,
-        "address": address,
-        "phone": phone
+    print(f"\nCadastro {i + 1}")
+
+    nome = input("Nome: ")
+    endereco = input("Endereço: ")
+    telefone = input("Telefone: ")
+
+    registro = {
+        "nome": nome,
+        "endereco": endereco,
+        "telefone": telefone
     }
-    
-    agenda.append(register)
+
+    agenda.append(registro)
+
+print("\nCadastro concluído!")
