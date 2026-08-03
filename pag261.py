@@ -1,19 +1,18 @@
-'''
-Elaborar um programa que efetue o gerenciamento dos dados de 10 registgros de uma agenda que contenha nomes, endereços e telefones, defina a estrutura de registro apropriada, o diagrama de blocos e a codigicacao de um  programa que, por meio de um menu de opçoes, execute as seguintes etapas:
-    
-    a) Cadastrar os 10 registros. 
-    b) Pesquisar um registro de cada vez pelo campo nome(usar o método sequencial).
-    c) Classificar por ondem de nome os registros cadastrados.
-    d) Apresentar todos os registros.
-    e)Sair do programa de cadastro.
+"""
+Elaborar um programa que efetue o gerenciamento dos dados de 10 registros
+de uma agenda contendo nomes, endereços e telefones.
 
-'''
+a) Cadastrar os 10 registros.
+b) Pesquisar um registro pelo nome (busca sequencial).
+c) Classificar os registros por ordem alfabética do nome.
+d) Apresentar todos os registros.
+e) Sair do programa.
+"""
 
 import random
 
-# ----------------------------
-# Dados para gerar a agenda
-# ----------------------------
+# Dados para gerar os registros
+
 nomes = [
     "Guilherme", "Maria", "João", "Pedro", "Ana",
     "Carlos", "Fernanda", "Lucas", "Juliana", "Rafael"
@@ -35,8 +34,7 @@ telefones = [
 agenda = []
 
 # =====================================
-# ALTERNATIVA A
-# Cadastrar os 10 registros
+# Alternativa A - Cadastrar os registros
 # =====================================
 
 for i in range(10):
@@ -48,25 +46,20 @@ for i in range(10):
     }
 
     agenda.append(registro)
-    agenda.sort(key=lambda registro: registro["nome"].lower())
 
-print("Agenda cadastrada!\n")
-
-for registro in agenda:
-    print(registro)
+print("\nAgenda cadastrada com sucesso!\n")
 
 # =====================================
-# ALTERNATIVA B
-# Pesquisa Sequencial por Nome
+# Alternativa B - Pesquisa Sequencial
 # =====================================
 
-nome_procurado = input("\nDigite o nome que deseja pesquisar: ")
+nome_procurado = input("Digite o nome que deseja pesquisar: ").strip()
 
 encontrou = False
 
 for registro in agenda:
 
-    if registro["nome"] == nome_procurado:
+    if registro["nome"].lower() == nome_procurado.lower():
 
         print("\nRegistro encontrado!\n")
         print("Nome:", registro["nome"])
@@ -76,16 +69,31 @@ for registro in agenda:
         encontrou = True
         break
 
-if encontrou == False:
+if not encontrou:
     print("\nRegistro não encontrado.")
-    
-    
-    print("\n=== AGENDA ===\n")
+
+# =====================================
+# Alternativa C - Classificar por nome
+# =====================================
+
+agenda.sort(key=lambda registro: registro["nome"].lower())
+
+print("\nAgenda classificada com sucesso!")
+
+# =====================================
+# Alternativa D - Apresentar registros
+# =====================================
+
+print("\n========== AGENDA ==========\n")
 
 for registro in agenda:
     print(f"Nome: {registro['nome']}")
     print(f"Endereço: {registro['endereco']}")
     print(f"Telefone: {registro['telefone']}")
     print("-" * 30)
+
+# =====================================
+# Alternativa E - Encerrar programa
+# =====================================
 
 print("\nPrograma encerrado.")
