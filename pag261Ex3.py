@@ -54,5 +54,3 @@ for indice, nome in enumerate(nomes):
     
 if not encontrado:
     print(f"O nome '{nome_procurado}' não está na lista.")
-    
-print(f"Presente todos os registros {}")
