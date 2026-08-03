@@ -1,69 +1,27 @@
-import random
-
-nomes = [
-    "Guilherme", "Maria", "João", "Pedro", "Ana",
-    "Carlos", "Fernanda", "Lucas", "Juliana", "Rafael",
-    "Bruno", "Camila", "Diego", "Eduarda", "Felipe",
-    "Gabriela", "Henrique", "Isabela", "Leonardo", "Natália"
+nomes_alunos = [
+    'Ana Beatriz', 'Bruno César', 'Camila Rocha', 'Diego Nunes', 'Eduarda Ramos',
+    'Felipe Duarte', 'Gabriela Torres', 'Henrique Lopes', 'Isabela Barros', 'João Pereira',
+    'Juliana Costa', 'Leonardo Pinto', 'Lucas Almeida', 'Maria Souza', 'Natália Ribeiro',
+    'Pedro Santos', 'Rafael Martins', 'Sophia Mendes', 'Thiago Lima', 'Vinícius Oliveira'
 ]
 
-notas = [i * 0.5 for i in range(21)]  # gera de 0.0 até 10.0
+notas_1_bimestre = [
+    8.5, 7.0, 9.2, 6.4, 8.0,
+    5.5, 9.8, 7.3, 8.8, 6.0,
+    7.5, 8.2, 6.9, 9.0, 8.4,
+    7.8, 5.0, 9.5, 6.2, 7.7
+]
 
-alunos = []
+notas_2_bimestre = [
+    7.8, 6.5, 9.0, 7.2, 8.5,
+    6.0, 9.5, 8.0, 8.2, 6.8,
+    8.0, 7.9, 7.1, 9.3, 8.0,
+    8.2, 5.8, 9.7, 6.5, 7.0
+]
 
-def mostrar_aluno(aluno):
-    print(f"Nome: {aluno['nome']}")
-    print(f"1º Bimestre: {aluno['1_bimestre']}")
-    print(f"2º Bimestre: {aluno['2_bimestre']}")
-    print(f"3º Bimestre: {aluno['3_bimestre']}")
-    print(f"4º Bimestre: {aluno['4_bimestre']}")
-    media = (aluno['1_bimestre'] + aluno['2_bimestre'] + aluno['3_bimestre'] + aluno['4_bimestre']) / 4 
-    print(f"Média: {media:.2f}")
-    print("Situação:", "APROVADO ✅" if media >= 5 else "REPROVADO ❌")
-    print("-" * 30)
-
-# Cadastro dos alunos
-for i in range(20):
-    aluno = {
-        "nome": random.choice(nomes),
-        "1_bimestre": random.choice(notas),
-        "2_bimestre": random.choice(notas),
-        "3_bimestre": random.choice(notas),
-        "4_bimestre": random.choice(notas)
-    }
-    alunos.append(aluno)
-
-print("\n=== ALUNOS CADASTRADOS ===\n")
-for aluno in alunos:
-    mostrar_aluno(aluno)
-
-# Ordenação para pesquisa binária
-alunos.sort(key=lambda aluno: aluno["nome"].lower())
-
-print("\n=== ALUNOS ORDENADOS ===\n")
-for aluno in alunos:
-    mostrar_aluno(aluno)
-
-# Pesquisa binária
-def pesquisa_binaria(lista, nome):
-    inicio, fim = 0, len(lista) - 1
-    while inicio <= fim:
-        meio = (inicio + fim) // 2
-        if lista[meio]["nome"].lower() == nome.lower():
-            return lista[meio]
-        elif lista[meio]["nome"].lower() < nome.lower():
-            inicio = meio + 1
-        else:
-            fim = meio - 1
-    return None
-
-nome_procurado = input("\nDigite o nome que deseja pesquisar: ").strip()
-aluno_encontrado = pesquisa_binaria(alunos, nome_procurado)
-
-if aluno_encontrado:
-    print("\nAluno encontrado!\n")
-    mostrar_aluno(aluno_encontrado)
-else:
-    print("\nAluno não encontrado.")
-
-print("\nPrograma encerrado.")
+notas_3_bimestre = [
+    8.2, 7.2, 9.5, 6.8, 8.8,
+    6.5, 10.0, 7.8, 8.5, 7.0,
+    8.3, 8.5, 7.5, 9.1, 8.7,
+    8.0, 6.2, 9.6, 7.0, 7.5
+]
