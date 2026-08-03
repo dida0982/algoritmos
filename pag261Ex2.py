@@ -1,6 +1,5 @@
 import random
 
-# Nomes dos alunos
 
 nomes = [
     "Guilherme", "Maria", "João", "Pedro", "Ana",
@@ -8,8 +7,6 @@ nomes = [
     "Bruno", "Camila", "Diego", "Eduarda", "Felipe",
     "Gabriela", "Henrique", "Isabela", "Leonardo", "Natália"
 ]
-
-# Notas possíveis (0.0 a 10.0)
 
 notas = [
     0.0, 0.5, 1.0, 1.5, 2.0, 2.5,
@@ -19,6 +16,18 @@ notas = [
 ]
 
 alunos = []
+
+
+def mostrar_aluno(aluno):
+    print(f"Nome: {aluno['nome']}")
+    print(f"1º Bimestre: {aluno['1_bimestre']}")
+    print(f"2º Bimestre: {aluno['2_bimestre']}")
+    print(f"3º Bimestre: {aluno['3_bimestre']}")
+    print(f"4º Bimestre: {aluno['4_bimestre']}")
+    print("-" * 30)
+
+
+# Cadastro dos alunos
 
 for i in range(20):
 
@@ -32,12 +41,16 @@ for i in range(20):
 
     alunos.append(aluno)
 
+
 print("\n=== ALUNOS CADASTRADOS ===\n")
 
 for aluno in alunos:
-    print(aluno)
-    
-nome_procurado = input("Digite o nome que deseja pesquisar: ").strip()
+    mostrar_aluno(aluno)
+
+
+# Pesquisa
+
+nome_procurado = input("\nDigite o nome que deseja pesquisar: ").strip()
 
 encontrou = False
 
@@ -45,32 +58,24 @@ for aluno in alunos:
 
     if aluno["nome"].lower() == nome_procurado.lower():
 
-        print("\aluno encontrado!\n")
-        print("Nome:", aluno["nome"])
-        print("1_bimestre:", aluno["1_bimestre"])
-        print("2_bimestre:", aluno["2_bimestre"])
-        print("3_bimestre:", aluno["3_bimestre"])
-        print("4_bimestre:", aluno["4_bimestre"])
+        print("\nAluno encontrado!\n")
+        mostrar_aluno(aluno)
 
         encontrou = True
         break
 
 if not encontrou:
-    print("\nRegistro não encontrado.")
-    
-alunos.sort(key=lambda registro: registro["nome"].lower())
+    print("\nAluno não encontrado.")
 
-print("\nAgenda classificada com sucesso!")
 
-print("\n========== AGENDA ==========\n")
+# Classificação
 
-for alunos in alunos:
-    print("Nome:", aluno["nome"])
-    print("1_bimestre:", aluno["1_bimestre"])
-    print("2_bimestre:", aluno["2_bimestre"])
-    print("3_bimestre:", aluno["3_bimestre"])
-    print("4_bimestre:", aluno["4_bimestre"])
-    print("-" * 30)
-    
+alunos.sort(key=lambda aluno: aluno["nome"].lower())
+
+print("\n=== ALUNOS ORDENADOS ===\n")
+
+for aluno in alunos:
+    mostrar_aluno(aluno)
+
+
 print("\nPrograma encerrado.")
-    
