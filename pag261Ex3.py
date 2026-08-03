@@ -30,7 +30,13 @@ nomes = [item[0].strip() for item in dados_ordenados]
 telefones = [item[1] for item in dados_ordenados]
 enderecos = [item[2] for item in dados_ordenados]
 
-
+print("=== LISTA DE CONTATOS CADASTRADOS (ORDEM ALFABÉTICA) ===")
+for indice, nome in enumerate(nomes):
+    print(f"Nome: {nome}")
+    print(f"Telefone: {telefones[indice]}")
+    print(f"Endereço: {enderecos[indice]}")
+    print("-" * 40)  # Cria uma linha separadora entre os contatos
+print("========================================================\n")
 
 print(f"\nPesquisar")
 nome_procurado = input("Qual nome vc procura?").strip()
