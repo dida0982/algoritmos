@@ -3,7 +3,7 @@ nomes = [
     'Ana', 'Bruno', 'Camila', 'Diego', 'Eduarda',
     'Felipe', 'Gabriela', 'Henrique', 'Isabela', 'João',
     'Juliana', 'Leonardo', 'Lucas', 'Maria', 'Natália',
-    'Pedro', 'Rafael', 'Sophia', 'Thiago', 'Vinícius'
+    'Guilherme', 'Rafael', 'Sophia', 'Thiago', 'Vinícius'
 ]
 
 alturas = [
